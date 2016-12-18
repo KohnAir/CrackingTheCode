@@ -8,7 +8,7 @@ bool isAllCharUnique(string stringToEval)
 	int dictBitMask = 0;
 	for (int i = 0; i < stringToEval.size(); ++i) {
 		int val = stringToEval[i] - 'a';
-		if (dictBitMask & 1 << val) {
+		if ( (dictBitMask & (1 << val)) > 0 ) {
 			return false;
 		}
 		dictBitMask |= 1 << val;
